@@ -1,3 +1,3 @@
 # calculator
 
-A new Flutter project.
+Esta calculadora realizará cálculos tanto simples, como algunos un tanto "complejos".
