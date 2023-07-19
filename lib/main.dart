@@ -1,9 +1,19 @@
 import 'package:calculator/config/router/app_router.dart';
 import 'package:calculator/config/theme/app_theme.dart';
+import 'package:calculator/ui/providers/providers.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => ComplexOperationsProvider()),
+        ChangeNotifierProvider(create: (_) => SimpleOperationsProvider()),
+      ],
+      child: const MainApp(),
+    ),
+  );
 }
 
 class MainApp extends StatelessWidget {
