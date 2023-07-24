@@ -1,5 +1,6 @@
-import 'package:calculator/ui/widgets/inputs/custom_input.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/widgets.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,55 +38,94 @@ class _CustomBody extends StatelessWidget {
       padding: const EdgeInsets.all(10.0),
       child: Column(
         children: [
-          const Expanded(child: SizedBox()),
+          // const Expanded(child: SizedBox()),
+          const Spacer(),
           const CustomInput(),
           Padding(
             padding: const EdgeInsets.symmetric(
               horizontal: 15.0,
             ).copyWith(bottom: 15),
-            child: Row(
+            child: const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Container(height: 30, width: 60, color: Colors.blue),
-                Container(height: 30, width: 60, color: Colors.blue),
-                Container(height: 30, width: 60, color: Colors.blue),
-                Container(height: 30, width: 60, color: Colors.blue),
-                Container(height: 30, width: 60, color: Colors.blue),
-                Container(height: 30, width: 60, color: Colors.blue),
+                CustomButtonComplexOperation(label: 'MC'),
+                CustomButtonComplexOperation(label: 'MR'),
+                CustomButtonComplexOperation(label: 'M+'),
+                CustomButtonComplexOperation(label: 'M-'),
+                CustomButtonComplexOperation(label: 'Ms'),
+                CustomButtonComplexOperation(label: 'M'),
               ],
             ),
           ),
-          Wrap(
-            alignment: WrapAlignment.end,
-            crossAxisAlignment: WrapCrossAlignment.center,
-            runAlignment: WrapAlignment.center,
-            spacing: 12,
-            runSpacing: 10,
+          Column(
             children: [
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
-              Container(width: 100, color: Colors.red, height: 60),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  const CustomButtonSimpleOperation(label: '%'),
+                  const CustomButtonSimpleOperation(label: 'CE'),
+                  const CustomButtonSimpleOperation(label: 'C'),
+                  Container(
+                    width: 100,
+                    height: 62,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      color: Colors.grey,
+                    ),
+                    child: const Center(child: Icon(Icons.backspace_outlined)),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomButtonSimpleOperation(label: '1/x'),
+                  CustomButtonSimpleOperation(label: 'x^2'),
+                  CustomButtonSimpleOperation(label: '√x'),
+                  CustomButtonSimpleOperation(label: '÷'),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomButtonNumber(label: '1'),
+                  CustomButtonNumber(label: '2'),
+                  CustomButtonNumber(label: '3'),
+                  CustomButtonSimpleOperation(label: 'x'),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomButtonNumber(label: '4'),
+                  CustomButtonNumber(label: '5'),
+                  CustomButtonNumber(label: '6'),
+                  CustomButtonSimpleOperation(label: '-'),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomButtonNumber(label: '7'),
+                  CustomButtonNumber(label: '8'),
+                  CustomButtonNumber(label: '9'),
+                  CustomButtonSimpleOperation(label: '+'),
+                ],
+              ),
+              const SizedBox(height: 10),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  CustomButtonNumber(label: '%'),
+                  CustomButtonNumber(label: '0'),
+                  CustomButtonNumber(label: '.'),
+                  CustomButtonSimpleOperation(label: '='),
+                ],
+              ),
             ],
           ),
         ],
